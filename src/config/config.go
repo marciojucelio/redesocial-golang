@@ -9,7 +9,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-//Carregar vai inicializar as variáveis de ambiente
+// Carregar vai inicializar as variáveis de ambiente
 var (
 	StringConexaoBanco = ""
 	Porta              = 0
@@ -25,9 +25,9 @@ func Carregar() {
 	if erro != nil {
 		Porta = 9000
 	}
-	StringConexaoBanco = fmt.Sprintf("%s:%s@/%s?charset=utf8&parseTime=True&loc=Local", 
-	os.Getenv("DB_USUARIO"), 
-	os.Getenv("DB_SENHA"),
-	os.Getenv("DB_NOME"),
-		)
+	StringConexaoBanco = fmt.Sprintf("%s:%s@/%s?charset=utf8&parseTime=True&loc=Local",
+		os.Getenv("DB_USUARIO"),
+		os.Getenv("DB_SENHA"),
+		os.Getenv("DB_NOME"),
+	)
 }
