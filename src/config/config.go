@@ -9,12 +9,15 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// Carregar vai inicializar as variáveis de ambiente
 var (
+	//StringConexaoBanco é a string de conexão com o MySql
 	StringConexaoBanco = ""
-	Porta              = 0
+	//Porta onde a API vai estar rodando
+	Porta     = 0
+	SecretKey []byte
 )
 
+// Carregar inicializa as variáveis de ambiente
 func Carregar() {
 	var erro error
 
@@ -30,4 +33,5 @@ func Carregar() {
 		os.Getenv("DB_SENHA"),
 		os.Getenv("DB_NOME"),
 	)
+	SecretKey = []byte(os.Getenv("SECRET_KEY"))
 }
