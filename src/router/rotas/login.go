@@ -9,5 +9,5 @@ var rotaLogin = Rota{
 	URI:                "/login",
 	Metodo:             http.MethodPost, 
 	Funcao:             controllers.Login,
-	RequerAutenticaçao: false,
+	RequerAutenticacao: false,
 }
